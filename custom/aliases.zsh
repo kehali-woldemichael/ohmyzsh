@@ -35,9 +35,10 @@ alias exat='eza --tree --level=2'
 # d1 - show for depth=1
 # --time - show time of the last modification of any file in the
 #     directory, or any of its subdirectories
-alias dust "dust -b -d 1"
+alias dust "dust -b -d 1 $PWD"
+alias duh "dust -b -d 1 $HOME"
+alias df="df -ah $PWD"
 alias dfh="df -ah $HOME"
-alias cargo-list="cargo install --list"
 alias trash-sym="find $PWD -type l -maxdepth 1"
 
 # Managing symlinks
@@ -56,5 +57,9 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 
 
 # For checking storage usage in Duke DCC
-[ $(hostname)=dcc ] && alias dfg="df -ah /hpc/group/zjhuanglab"
-[ $(hostname)=dcc ] && alias dfk="df -ah /hpc/group/zjhuanglab/kbw29"
+if [ $(hostname)=dcc ]; then 
+    alias group="/hpc/group/zjhuanglab/kbw29"
+
+    alias dfg="df -ah /hpc/group/zjhuanglab"
+    alias dfk="df -ah /hpc/group/zjhuanglab/kbw29"
+fi
