@@ -7,8 +7,7 @@ export CORE="$STORAGE/Core"
 
 export CONFIG="$CORE/Home/.config"
 export CUSTOM="$ZSH/custom"
-export BIN="$local_bin"
-
+export BIN="$CORE/Bin"
 
 # Setting variables w/ paths to relevant directories
 local_bin="$HOME/.local/bin"
