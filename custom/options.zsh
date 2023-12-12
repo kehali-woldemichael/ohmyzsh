@@ -10,12 +10,20 @@ COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Settting command execution time stamp shown in the history command output
 HIST_STAMPS="yyyy-mmm-dd"
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
+# Hide the prompt context info when you’re logged in as yourself on your local machine
+prompt_context() {
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+#    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+  fi
+}
+
+
+# Check if nvim installed ... if not use vim
+nvimStatus="$(which nvim)"
+if [[ -z $nvimStatus ]]; then
     export EDITOR='vim'
 else
     export EDITOR='nvim'
 fi
-
 
 

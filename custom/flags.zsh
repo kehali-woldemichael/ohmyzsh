@@ -17,10 +17,10 @@ SPEED="-Ofast -flto"
 
 GRAPHITE="-floop-interchange -ftree-loop-distribution -floop-strip-mine -floop-nest-optimize -fgraphite-identity" 
 
-export FAST_FLAGS="${COMMON_FLAGS} ${INFO_FLAGS} ${FAST}"
+export FAST_FLAGS="${COMMON_FLAGS} ${SPEED}"
 export SPEED_FLAGS="${COMMON_FLAGS} ${INFO_FLAGS} ${SPEED} ${GRAPHITE}"
 
-ALL_FLAGS="${SPEED_FLAGS}"
+ALL_FLAGS="${FAST_FLAGS}"
 export CFLAGS="${ALL_FLAGS}"
 export CXXFLAGS="${ALL_FLAGS}"
 
