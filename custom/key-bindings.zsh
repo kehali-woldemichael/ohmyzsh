@@ -1,1 +1,1 @@
-/Users/kbw29/Core/Git/make/fzf/shell/key-bindings.zsh
+/Users/kbw29/Core/Git/make/fzf/Shell/key-bindings.zsh

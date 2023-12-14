@@ -19,28 +19,21 @@ function print() {
     flag="$1"
 
     if [[ "$flag" = "-c" ]]; then
-	input="$2"
+      	input="$2"
         choice="$3"
-	color="${(P)choice}"
-
-	output="${color}$input${normal}"
-	printf "$output\n"
+	      color="${(P)choice}"
+	      output="${color}$input${normal}"
+	      printf "$output\n"
     elif [[ "$flag" = "-pc" ]]; then
         total="$2"
         sub="$3"
 
         choice="$4"
-	color="${(P)choice}"
+	      color="${(P)choice}"
 
         mod="${color}$sub${normal}"
-	printf "${total/"$sub"/"$mod"} \n"
-    else 
-	printf "$1\n"	
+	      printf "${total/"$sub"/"$mod"} \n"
+    elif [[ -z "$1" ]]; then
+	      printf "$1\n"	
     fi
-}
-
-function test_print() {
-     print "No color"
-     print -c "All color" green
-     print -pc "One initial" "initial" green
 }

@@ -1,3 +1,7 @@
+# Necessary paths
+homebrew_path="/opt/homebrew/bin"
+typeset -U path path && path=($path $homebrew_path)
+
 # -mcpu: determines instructions to emit when generating assembly code (like -march) and the target processor for which to tune for performance (like -mtune)
 # -pipe: no effect on the generated code, but it makes the compilation process faster ... 
 ## compiler uses pipes instead of temporary files during the different stages of compilation
@@ -27,10 +31,10 @@ export CXXFLAGS="${ALL_FLAGS}"
 export FCFLAGS="${ALL_FLAGS}"
 export FFLAGS="${ALL_FLAGS}"
 
-CORES=$(nproc --all) # get number of logical cores
 # Dividing number of total cores with 3/4 ... w/ floor rounding
-USE=$(($(nproc)*3/4))
-export MAKEOPTS="-j$USE --load-average $(($USE+2))"
+coreNum=$(nproc --all)
+integer USE=$(($coreNum * 3 / 4 )) 
+export MAKEOPTS="-j $USE --load-average 10)"
 
 #RUST_Linker-LTO_FLAGS="-Clinker-plugin-lto -Clinker=clang -Clink-arg=-fuse-ld=lld"
 #RUSTFLAGS="-C target-cpu=native -C opt-level=3 lto="
