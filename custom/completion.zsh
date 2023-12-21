@@ -1,1 +1,1 @@
-/Users/kbw29/Core/Git/make/fzf/Shell/completion.zsh
+/Users/kbw29/Core/apps/fzf/shell/completion.zsh

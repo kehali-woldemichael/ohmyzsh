@@ -1,5 +1,11 @@
 # Importing variables from paths.zsh
 source $ZSH/custom/paths.zsh
+source $ZSH/custom/colorize.zsh
+
+# Symlink if not exist
+[[ ! -f "$CUSTOM/completion.zsh" ]] && ln -sf "$CORE/apps/fzf/shell/completion.zsh" $CUSTOM
+[[ ! -f "$CUSTOM/key-bindings.zsh" ]] && ln -sf "$CORE/apps/fzf/shell/key-bindings.zsh" $CUSTOM
+
 
 # Navigation
 alias dropbox="cd $HOME/Dropbox"
@@ -8,6 +14,7 @@ alias storage="cd $STORAGE"
 alias core="cd $CORE"
 alias config="cd $CONFIG"
 alias bin="cd $BIN"
+alias apps="cd $APPS"
 # onmyzsh
 alias custom="cd $CUSTOM"
 # neovim
@@ -16,13 +23,16 @@ alias nv-lua="cd $nv_dir/lua"
 
 # Files
 # Add check to see if nvim installed
-alias zshrc="nvim $HOME/.zshrc"
-alias paths="nvim $CUSTOM/paths.zsh"
-alias aliases="nvim $CUSTOM/aliases.zsh"
-alias options="nvim $CUSTOM/options.zsh"
-alias flags="nvim $CUSTOM/flags.zsh"
-alias keybindings="nvim $CUSTOM/keybindings.zsh"
-alias nv-init="nvim $nv/init.lua"
+alias zshrc="$EDITOR $HOME/.zshrc"
+alias zshenv="$EDITOR $HOME/.zshenv"
+
+alias paths="$EDITOR $CUSTOM/paths.zsh"
+alias aliases="$EDITOR $CUSTOM/aliases.zsh"
+alias options="$EDITOR $CUSTOM/options.zsh"
+alias flags="$EDITOR $CUSTOM/flags.zsh"
+alias keybindings="$EDITOR $CUSTOM/keybindings.zsh"
+
+alias nv-init="$EDITOR $nv/init.lua"
 
 # Research
 alias courses="cd $DROPBOX/Research/Neurobiology_PhD/Courses"
@@ -48,13 +58,34 @@ alias symlink-rm="find . -type l -exec rm -- {} +"
 alias symlink-dangling-rm="find -L . -type l -exec rm -- {} +"
 
 # Blocking bad habits
-alias rm='echo "This is not the command you are looking for."; false'
-alias ls='echo "This is not the command you are looking for."; false'
-alias exa='echo "This is not the command you are looking for."; false'
+if [[ $(command -v eza) ]]; then alias ls='print -c "This is not the command you are looking for." red'
+else echo "Please setup eza using cargo"; fi
+alias exa='print -c "This is not the command you are looking for." red'
+
+if [[ $(command -v trash) ]]; then alias rm='print -c "This is not the command you are looking for." red'
+else print "Please setup trash-cli using pipx" red; fi
+
+if [[ $(command -v ranger) ]]; then 
+    # Causes ranger to remain in current directory when quitng ranger
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+    # modify to use cache/.rangerdir 
+else print -c  "Please setup trash-cli using pipx" red; fi
+
 
 # Applications
-# Causes ranger to remain in current directory when quitng ranger
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+os=$(uname)
+if [[ $os = "Darwin" ]]; then
+  gcc_path="/opt/homebrew/opt/gcc/bin/gcc-13"
+  make_path="/opt/homebrew/bin/gmake"
+  local_bin="/usr/local/bin"
+
+  alias gcc="$gcc_path"
+  alias make="$make_path"
+
+  ln -sf "$make_path" "$local_bin"
+  ln -sf "$gcc_path" "$local_bin"
+fi
 
 
 # DCC dcc
