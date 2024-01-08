@@ -2,6 +2,7 @@ export XDG_CONFIG_HOME="$HOME/config" # changing location of config directory
 export CARGO_HOME="$HOME/apps/.cargo" # move this later
 export GOPATH="$HOME/apps/go"
 export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 
 # Navigation enviroment variables
@@ -38,7 +39,7 @@ export PATH=$PATH:"/bin"
 # Setting variables w/ paths to relevant directories
 # General
 global_bin="/usr/bin"
-personal_bin="$HOME/.local/bin"
+personal_bin="$HOME/Core/local/bin"
 local_bin="/usr/local/bin"
 go_bin="$HOME/apps/go/bin"
 # MacOS
