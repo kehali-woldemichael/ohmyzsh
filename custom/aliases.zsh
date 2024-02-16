@@ -13,8 +13,9 @@ alias code="cd $CODE"
 alias storage="cd $STORAGE"
 alias core="cd $CORE"
 alias config="cd $CONFIG"
-alias bin="cd $BIN"
+alias bin="cd $personal_bin"
 alias apps="cd $APPS"
+alias function_dir="cd $FUNCTIONS"
 # onmyzsh
 alias custom="cd $CUSTOM"
 # neovim
@@ -73,19 +74,6 @@ else print -c  "Please setup trash-cli using pipx" red; fi
 
 
 # Applications
-
-os=$(uname)
-if [[ $os = "Darwin" ]]; then
-  gcc_path="/opt/homebrew/opt/gcc/bin/gcc-13"
-  make_path="/opt/homebrew/bin/gmake"
-  local_bin="/usr/local/bin"
-
-  alias gcc="$gcc_path"
-  alias make="$make_path"
-
-  ln -sf "$make_path" "$local_bin"
-  ln -sf "$gcc_path" "$local_bin"
-fi
 
 
 # DCC dcc

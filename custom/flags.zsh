@@ -12,6 +12,25 @@ export CXXFLAGS="$CFLAGS"
 export LDFLAGS="$CFLAGS"
 
 
+alias make="$make_path"
+if [[ $os = "Darwin" ]]; then
+  gcc_path="/opt/homebrew/opt/gcc"
+  #gcc_path="/opt/homebrew/bin/aarch64-apple-darwin23-gcc-13"
+  make_path="/opt/homebrew/bin/gmake"
+  target_bin="/usr/local/bin"
+
+  #alias gcc="$gcc_path"
+  alias make="$make_path"
+  #export CC="$gcc_path"
+
+  #ln -sf "$make_path" "$target_bin"
+  #ln -sf "$gcc_path" "$target_bin"
+
+  export TCLTK_LIBS="-L/opt/homebrew/opt/tcl-tk/lib -ltcl8.6 -ltk8.6"
+  export TCLTK_CFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
+fi
+
+
 
 
 

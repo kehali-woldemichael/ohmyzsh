@@ -1,8 +1,9 @@
-export XDG_CONFIG_HOME="$HOME/config" # changing location of config directory
+export XDG_CONFIG_HOME="$HOME/local/config" # changing location of config directory
 export CARGO_HOME="$HOME/apps/.cargo" # move this later
 export GOPATH="$HOME/apps/go"
 export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
 
 
 # Navigation enviroment variables
@@ -20,6 +21,7 @@ export CONFIG="$CORE/Home/.config"
 export CUSTOM="$ZSH/custom"
 export BIN="$CORE/Bin"
 export APPS="$CORE/apps"
+export FUNCTIONS="$CORE/local/functions"
 
 
 # Macports
@@ -41,7 +43,6 @@ export PATH=$PATH:"/bin"
 global_bin="/usr/bin"
 personal_bin="$HOME/Core/local/bin"
 local_bin="/usr/local/bin"
-go_bin="$HOME/apps/go/bin"
 # MacOS
 homebrew_path="/opt/homebrew/bin"
 # Homerbrew
@@ -50,7 +51,7 @@ ccache_bin="/opt/homebrew/opt/ccache/libexec"
 ccache_path="/opt/homebrew/opt/ccache/bin/ccache"
 
 typeset -U path PATH && path=($path
-		$global_bin $local_bin $personal_bin $go_bin
+		$global_bin $local_bin $personal_bin
  	        $homebrew_path $ccache_path $ccache_bin)
 
 
