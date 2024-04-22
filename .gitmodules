@@ -10,3 +10,11 @@
 	path = custom/plugins/zsh-autoupdate
 	url = git@github.com:kehali-woldemichael/zsh-autoupdate.git
 	branch = personal
+[submodule "custom/plugins/zsh-vi-mode"]
+	path = custom/plugins/zsh-vi-mode
+	url = git@github.com:jeffreytse/zsh-vi-mode.git
+	branch = master
+[submodule "custom/plugins/diff-so-fancy"]
+	path = custom/plugins/diff-so-fancy
+	url = git@github.com:so-fancy/diff-so-fancy.git
+	branch = next

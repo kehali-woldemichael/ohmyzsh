@@ -16,7 +16,7 @@ chpwd_last_working_dir() {
 lwd() {
   # Add ".$SSH_USER" suffix to cache file if $SSH_USER is set and non-empty
   local cache_file="$ZSH_CACHE_DIR/last-working-dir${SSH_USER:+.$SSH_USER}"
-  [[ -r "$cache_file" ]] && cd "$(cat "$cache_file")"
+  [[ -r "$cache_file" ]] && z "$(cat "$cache_file")"
 }
 
 # Jump to last directory automatically unless:

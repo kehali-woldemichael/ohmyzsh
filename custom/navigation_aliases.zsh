@@ -1,3 +1,4 @@
+cmd="z"
 # Navigation
 if [[ $(command -v $cmd) ]]; then
   nav="z"
@@ -6,13 +7,14 @@ fi
 alias dropbox="$nav $HOME/Dropbox"
 alias code="$nav $HOME/Dropbox/Learning/Code"
 alias storage="$nav $STORAGE"
-alias core="$nav $CORE"
-alias config="$nav $CONFIG"
-alias bin="$nav $personal_bin"
-alias apps="$nav $APPS"
-alias function_dir="$nav $FUNCTIONS"
+alias core="$nav $HOME/Core"
+alias config="$nav $HOME/Core/config/"
+
+alias bin="$nav $HOME/Core/bin/"
+alias apps="$nav $HOME/Core/apps/"
+alias function_dir="$nav $$HOME/Core/functions/"
 # onmyzsh
-alias custom="$nav $CUSTOM"
+alias custom="$nav $ZSH_CUSTOM"
 # neovim
 alias nv="$nav $nv_dir"
 alias nv-lua="$nav $nv_dir/lua"

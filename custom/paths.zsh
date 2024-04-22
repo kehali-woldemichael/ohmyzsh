@@ -28,7 +28,10 @@ default_bin="$HOME/.local/bin"
 default_sbin="$HOME/.local/sbin"
 local_bin="/usr/local/bin"
 system_bin="/bin"
+
+# external bins 
 git_extra_bin="$HOME/Core/apps/git-extra-commands/bin"
+extract_sh="$HOME/Core/apps/Extract"
 
 # MacOS
 homebrew_path="/opt/homebrew/bin"
@@ -43,7 +46,8 @@ typeset -U path PATH && path=($path
 		$global_bin  $default_bin $system_bin $default_sbin
     $local_bin $personal_bin $cargo_bin
  	  $homebrew_path $ccache_path $ccache_bin
-    $make_path $git_extra_bin)
+    $make_path 
+    $git_extra_bin $extract_sh)
 
 
 
