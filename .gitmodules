@@ -6,3 +6,7 @@
 	path = custom/plugins/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
 	branch = master
+[submodule "custom/plugins/zsh-autoupdate"]
+	path = custom/plugins/zsh-autoupdate
+	url = git@github.com:kehali-woldemichael/zsh-autoupdate.git
+	branch = personal
