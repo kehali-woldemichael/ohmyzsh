@@ -40,7 +40,6 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 # Python
-PYENV_ROOT="$HOME/.pyenv"
 pyenv_bin="$PYENV_ROOT/bin"
 pyenv_version="$PYENV_ROOT/versions"
 brew_python="$(brew list | grep python@ | tr -d "@")"
@@ -50,8 +49,8 @@ if [ -z $pyenv_version ]; then
   #python_global_bin="$PYENV_ROOT/versions/$pyenv_global/bin"
 elif [ -n "$brew_python" ]; then
   echo "No python is installed in pyenv"
-  echo "Aliasing homebrew python as backup"
-  alias python="$brew_python"
+  #echo "Aliasing homebrew python as backup"
+  #alias python="$brew_python"
 else
   echo "No python is installed"
 fi

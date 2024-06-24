@@ -34,20 +34,36 @@ function alias_implement() {
   done
 }
 
+# Package managers
+function alias_simplify() {
+  input=$1 
+  output=$2
+
+  if [[ $(command -v $output) ]]; then
+    alias "$input"="$output"
+  else 
+    alias "$input"='print -c "Please install $cmd" yellow'
+  fi;
+}
+#alias "pip3"='print -c "Please use either conda or poetry instead" red'
+#alias "pip"='print -c "Please use either conda or poetry instead" red'
+
+
 # Storage/size
 alias_implement "dust" "dust -b -d 1 $PWD" "du"
 alias df="df -ah $PWD"
 alias dfh="df -ah $HOME"
+
 # Navigation 
 alias_implement "zoxide" "zoxide" "cd"
+alias_implement "bat" "bat" "cat"
 if [[ $(command -v trash) ]]; then 
   alias t="trash"
   alias rm='print -c "Please use t for trash instead" yellow'
 fi
-alias_implement "bat" "bat" "cat"
 ranger_alias='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`bat $HOME/.rangerdir`; z "$LASTDIR"'
 alias_implement "ranger" "$ranger_alias" ""
-alias_implement "eza" "eza -al" "ls,exa"
+#alias_implement "eza" "eza -al" "ls,exa"
 [[ $(command -v eza) ]] && alias ezat="eza --tree --level=2"
 
   

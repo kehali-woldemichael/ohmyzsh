@@ -1,8 +1,17 @@
+# Base
+alias aliases-nav="$EDITOR $CUSTOM/navigation_aliases.zsh"
+alias aliases-cmd="$EDITOR $CUSTOM/command_aliases.zsh"
+
+# Setting type of cli cmd to use for navigation 
+app="zoxide"
 cmd="z"
-# Navigation
-if [[ $(command -v $cmd) ]]; then
-  nav="z"
-fi
+# Check if chosen navigatino tool is availible 
+# Defaults to cd if not  
+if [[ $(command -v $app) ]]; then
+  nav="$cmd"
+else
+  nav="cd"
+fi;
 
 alias dropbox="$nav $HOME/Dropbox"
 alias code="$nav $HOME/Dropbox/Learning/Code"
@@ -12,7 +21,8 @@ alias config="$nav $HOME/Core/config/"
 
 alias bin="$nav $HOME/Core/bin/"
 alias apps="$nav $HOME/Core/apps/"
-alias function_dir="$nav $$HOME/Core/functions/"
+alias functions="$nav $HOME/Core/functions/"
+
 # onmyzsh
 alias custom="$nav $ZSH_CUSTOM"
 # neovim
@@ -32,8 +42,6 @@ alias zshenv="$EDITOR $HOME/.zshenv"
 alias zprofile="$EDITOR $HOME/.zprofile"
 
 alias paths="$EDITOR $CUSTOM/paths.zsh"
-alias aliases-nav="$EDITOR $CUSTOM/navigation_aliases.zsh"
-alias aliases-cmd="$EDITOR $CUSTOM/command_aliases.zsh"
 alias options="$EDITOR $CUSTOM/options.zsh"
 alias flags="$EDITOR $CUSTOM/flags.zsh"
 alias keybindings="$EDITOR $CUSTOM/keybindings.zsh"

@@ -14,11 +14,11 @@ export APPS="$CORE/apps"
 export FUNCTIONS="$CORE/local/functions"
 
 # Python
-PYENV_ROOT="$HOME/.pyenv"
 pyenv_bin="$PYENV_ROOT/bin"
 pyenv_version="$PYENV_ROOT/versions"
 brew_python="$(brew list | grep python@ | tr -d "@")"
 
+export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 
 # Setting variables w/ paths to relevant directories
 # General
@@ -49,6 +49,11 @@ typeset -U path PATH && path=($path
     $make_path 
     $git_extra_bin $extract_sh)
 
+# Package managers 
+conda_bin="/usr/local/anaconda3/condabin"
+anaconda_bin="/usr/local/anaconda3/bin"
+typeset -U path PATH && path=($path 
+    $conda_bin $anaconda_bin)
 
 
 

@@ -11,6 +11,12 @@ export CFLAGS="-pipe -mcpu=native -O3"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="$CFLAGS"
 
+# Rust
+RUST_COMMON="-C target-cpu=native -C opt-level=3"
+#RUST_LTO_FLAGS="-Clinker-plugin-lto -Clinker=clang -Clink-arg=-fuse-ld=lld"
+export RUSTFLAGS="${RUST_COMMON}"
+CARGO_CACHE_RUSTC_INFO=0
+
 
 alias make="$make_path"
 if [[ $os = "Darwin" ]]; then
