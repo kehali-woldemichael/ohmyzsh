@@ -1,0 +1,8 @@
+[submodule "custom/plugins/diff-so-fancy"]
+	path = custom/plugins/diff-so-fancy
+	url = git@github.com:so-fancy/diff-so-fancy.git
+	branch = next
+[submodule "custom/plugins/zsh-autoupdate"]
+	path = custom/plugins/zsh-autoupdate
+	url = git@github.com:kehali-woldemichael/zsh-autoupdate.git
+	branch = main
