@@ -1,3 +1,18 @@
+# Navigation enviroment variables
+# Include check for operating system ... or machine?
+export DROPBOX="$HOME/Dropbox"
+export CODE="$DROPBOX/Code"
+export STORAGE="$CODE/Storage"
+export SOFTWARE="$STORAGE/Software"
+
+# Core module directory 
+export CORE="$HOME/Core"
+export CUSTOM="$ZSH/custom"
+export BIN="$CORE/bin"
+export APPS="$CORE/apps"
+export FUNCTIONS="$CORE/local/functions"
+
+
 # Base
 alias aliases-nav="$EDITOR $CUSTOM/navigation_aliases.zsh"
 alias aliases-cmd="$EDITOR $CUSTOM/command_aliases.zsh"
