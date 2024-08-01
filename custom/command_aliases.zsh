@@ -63,7 +63,7 @@ if [[ $(command -v trash) ]]; then
 fi
 ranger_alias='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`bat $HOME/.rangerdir`; z "$LASTDIR"'
 alias_implement "ranger" "$ranger_alias" ""
-#alias_implement "eza" "eza -al" "ls,exa"
+alias_implement "eza" "eza -al" "ls,exa"
 [[ $(command -v eza) ]] && alias ezat="eza --tree --level=2"
 
   
