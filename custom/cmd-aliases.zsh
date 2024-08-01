@@ -1,7 +1,5 @@
 # Importing variables from paths.zsh
 source $ZSH/custom/paths.zsh
-source $ZSH/custom/colorize.zsh
-
 
 # CLI Commands 
 
@@ -48,9 +46,9 @@ function alias_simplify() {
 }
 
 # Storage/size
-alias_implement "dust" "dust -b -d 1 $PWD" "du"
-alias df="df -ah $PWD"
-alias dfh="df -ah $HOME"
+alias du="print -c 'Please use dust instead' yellow"
+alias dfh="sudo df -h"
+alias dfa="sudo df -ah"
  
 # Navigation 
 alias_implement "zoxide" "zoxide" "cd"
