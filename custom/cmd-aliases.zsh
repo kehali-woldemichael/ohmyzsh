@@ -51,12 +51,12 @@ alias dfh="sudo df -h"
 alias dfa="sudo df -ah"
  
 # Navigation 
-alias_implement "zoxide" "zoxide" "cd"
+#alias_implement "zoxide" "zoxide" "cd"
 alias_implement "bat" "bat" "cat"
-if [[ $(command -v trash) ]]; then 
-  alias t="trash"
-  alias rm='print -c "Please use t for trash instead" yellow'
-fi
+#if [[ $(command -v trash) ]]; then 
+#  alias t="trash"
+#  alias rm='print -c "Please use t for trash instead" yellow'
+#fi
 ranger_alias='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`bat $HOME/.rangerdir`; z "$LASTDIR"'
 alias_implement "ranger" "$ranger_alias" ""
 alias_implement "eza" "eza -al" "ls,exa"
