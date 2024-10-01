@@ -49,6 +49,9 @@ function alias_simplify() {
 alias du="print -c 'Please use dust instead' yellow"
 alias dfh="sudo df -h"
 alias dfa="sudo df -ah"
+
+alias tmux="/home/kbw29/Core/apps/tmux/tmux"
+alias nvim="/home/kbw29/Core/apps/neovim/build/bin/nvim"
  
 # Navigation 
 #alias_implement "zoxide" "zoxide" "cd"
