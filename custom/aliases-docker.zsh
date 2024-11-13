@@ -12,6 +12,9 @@ alias dce="docker container stop"
 # Create/delete
 alias dcrs="docker container restart" # Remove specified docker container
 alias dcrm="docker container rm" # Remove specified docker container
+# Docker compose
+alias dcud="docker compose up -d" # Remove specified docker container
+
 
 # Network
 alias dnls="docker network ls" 
