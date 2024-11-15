@@ -1,3 +1,7 @@
+# Basic
+alias cargo="/home/kbw29/Core/local/.cargo/bin/cargo"
+alias rustc="/home/kbw29/Core/local/.cargo/bin/rustc"
+alias rustup="/home/kbw29/Core/local/.cargo/bin/rustup"
 # General
 alias ruu="rustup update"
 alias ci="cargo install"

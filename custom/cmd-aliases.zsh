@@ -1,52 +1,10 @@
 # Importing variables from paths.zsh
 source $ZSH/custom/paths.zsh
+source $HOME/Core/functions/aliases_func.zsh
 
-# CLI Commands 
-
-# Function - alias_implement
-#   1) Checks if commands are availible from comma separated list of commands
-#   2) Aliases availible commands into a modified version w/ extra arguments 
-#   3) Blocks comma separated list of commands to prevent use 
-#   4) Generates prompt if command is not availible 
-#
-# Args: str $1 - initial command 
-#       str $2 - output alias 
-#       str $3 - comma separated list of commands to block 
-# Returns: 
-#   cmd - aliased version of initial command 
-function alias_implement() {
-	#cmd="$1"
-	cmd_list=(${(@s:,:)1})
-  output="$2"
-	block_list=(${(@s:,:)3})
-
-  for block in ${block_list[@]}; do
-    alias "$block"='print -c "This is not the command you are looking for." red'
-  done
-
-  for cmd in ${cmd_list[@]}; do
-    if [[ $(command -v $cmd) ]]; then 
-      alias "$cmd"="$output"
-    else 
-      alias "$cmd"='print -c "Please install $cmd" yellow'
-    fi
-  done
-}
-
-# Package managers
-function alias_simplify() {
-  input=$1 
-  output=$2
-
-  if [[ $(command -v $output) ]]; then
-    alias "$input"="$output"
-  else 
-    alias "$input"='print -c "Please install $cmd" yellow'
-  fi;
-}
 
 # Storage/size
-alias du="print -c 'Please use dust instead' yellow"
+#alias du="print -c 'Please use dust instead' yellow"
 alias dfh="sudo df -h"
 alias dfa="sudo df -ah"
 
