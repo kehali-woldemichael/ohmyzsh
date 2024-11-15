@@ -6,7 +6,6 @@ cache/
 log/
 *.swp
 .DS_Store
-plugins/
 
 # editor configs
 .vscode
